@@ -184,4 +184,16 @@ public class MusicOrganizer
                                               + track.getTitle());
         }
     }
+    
+    public void playShuffledTracks()
+    {
+        ArrayList newTracks = tracks;
+        Collections.shuffle(newTracks);
+        for(int i=0; i<= newTracks.size() - 1; i = i + 1)
+        {
+            Track track = newTracks.get(i);
+            System.out.println("Now playing: " + track.getArtist() + "-" 
+                                + track.getTitle());
+            player.playSample(track.getFilename());
+            
 }
