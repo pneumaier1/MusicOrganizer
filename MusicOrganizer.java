@@ -170,4 +170,18 @@ public class MusicOrganizer
             addTrack(track);
         }
     }
+    
+    public void playRandomTrack()
+    {
+        random rand = new Random ();
+        int randInt = rand.nextInt(tracks.size());
+        
+        if(indexValid(randInt))
+        {
+            Track track = tracks.get(randInt);
+            player.startPlaying(track.getFilename());
+            System.out.println("Now playing: "+ track.getArtist() + "-" 
+                                              + track.getTitle());
+        }
+    }
 }
